@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>Cary Zoomable Treemaps</title>
+<style>
+  body {
+    background: #fcfcfa;
+    color: #333;
+    font-family: sans-serif;
+    margin: 1em auto 4em auto;
+    position: relative;
+    width: 960px;
+  }
+  footer {
+    margin: 20px 0;
+    font-size: 85%;
+  }
+
+#chart1, #chart2 {
+  width: 465px;
+  height: 300px;
+  background: #ddd;
+  float: left;
+  margin-right: 10px;
+}
+
+span.clearfix {
+  clear: both;
+  display: block;
+}
+
+text {
+  pointer-events: none;
+}
+
+.grandparent1 text, .grandparent2 text {
+  font-weight: bold;
+}
+
+rect {
+  fill: none;
+  stroke: #fff;
+}
+
+rect.parent,
+.grandparent1 rect, grandparent2 rect{
+  stroke-width: 2px;
+}
+
+.grandparent1 rect, .grandparent2 rect {
+  fill: orange;
+}
+
+.grandparent1:hover rect, .grandparent2:hover rect {
+  fill: #ee9700;
+}
+
+.children rect.parent,
+.grandparent1 rect, .grandparent2 rect {
+  cursor: pointer;
+}
+
+.children rect.parent {
+  fill: #bbb;
+  fill-opacity: .5;
+}
+
+.children:hover rect.child {
+  fill: #bbb;
+}
+
+</style>
+
+<h1>Cary Zoomable Treemaps</h1>
+
+<div id="chart1"></div>
+<div id="chart2"></div>
+<span class='clearfix'><!--clear --></span>
+
+<aside>Click any cell to zoom in, or the top orange label to zoom out.</aside>
+
+<footer>Taken somewhat crudely from Mike Bostock, apologies.</footer>
+
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="treemap1.js"></script>
+<script src="treemap2.js"></script>
+
